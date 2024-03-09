@@ -38,11 +38,11 @@
 const print = @import("std").debug.print;
 
 pub fn main() void {
-    var com_frame = async getPageTitle("http://example.com");
-    var org_frame = async getPageTitle("http://example.org");
+    const com_frame = async getPageTitle("http://example.com");
+    const org_frame = async getPageTitle("http://example.org");
 
-    var com_title = com_frame;
-    var org_title = org_frame;
+    const com_title = await com_frame;
+    const org_title = await org_frame;
 
     print(".com: {s}, .org: {s}.\n", .{ com_title, org_title });
 }
